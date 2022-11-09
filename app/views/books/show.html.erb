@@ -1,1 +1,20 @@
 <%= render "list", book: @book %>
+
+<div class="col-md-8 offset-md-1">
+  <h2>Book detail</h2>
+  <table class="table table-hover table-inverse">
+    <tbody>
+        <tr>
+          <td>
+            <%= link_to user_path(@book_id.user_id) do %>
+              <%= image_tag @book_id.user.get_profile_image(80,80) %>
+            <% end %>
+          </td>
+          <td><%= @book_id.title %></td>
+          <td><%= @book_id.body %></td>
+          <td><%= link_to "Edit", edit_book_path(@book_id.id),class: "btn btn-sm btn-success edit_book_#{@book_id.id}" %></td>
+          <td><%= link_to "Destroy", book_path(@book_id.id),method: :delete,class: "btn btn-sm btn-danger destroy_book_#{@book_id.id}","data-confirm" => "本当に消しますか？" %></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
