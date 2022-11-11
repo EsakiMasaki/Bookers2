@@ -21,7 +21,7 @@
         <i class="fas fa-user-cog"></i>
       <% end %>
     <% else %>
-      <%= link_to user_path(current_user.id), class: "btn btn-outline-secondary btn-block edit_user_#{current_user.id}" do %>
+      <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
         <i class="fas fa-user-cog"></i>
       <% end %>
     <% end %>
